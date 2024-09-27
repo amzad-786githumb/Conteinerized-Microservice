@@ -2,11 +2,13 @@ from mylib.bot import scrap
 from wikibot import cli
 from click.testing import CliRunner
 
+
 def test_scrap():
     assert "Microsoft" in scrap("Microsoft")
 
+
 def test_wikibot():
-    runner=CliRunner()
-    result= runner.invoke(cli,['--name', 'Microsoft'])
+    runner = CliRunner()
+    result = runner.invoke(cli, ["--name", "Microsoft"])
     assert result.exit_code == 0
-    assert 'Microsoft' in result.output
+    assert "Microsoft" in result.output
