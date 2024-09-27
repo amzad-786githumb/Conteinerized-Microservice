@@ -1,8 +1,13 @@
-import wikipedia
+from mylib.bot import scrap
+import click
 
+@click.command()
+@click.option('--name',
+              help='Webpage we want to scrap.')
 
-def scrap(name="Microsoft", length=1):
-    results = wikipedia.summary(name, sentences=length)
-    return results
+def cli(name):
+    results = scrap(name)
+    click.echo(click.style(f'{results}:',bg= 'blue', fg ="white"))
 
-print(scrap("facebook"))
+if __name__ == '__main__':
+    cli()
