@@ -1,6 +1,10 @@
 pylint
+urllib3==1.26.6
 pytest
 black
 wikipedia
 ipython
 fire
+fastapi
+pydantic
+uvicorn
